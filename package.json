@@ -1,6 +1,6 @@
 {
   "name": "grouptag-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "定义一组选中标签，可以单选也可以多选",
   "files": [
     "build"
