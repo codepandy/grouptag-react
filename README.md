@@ -9,7 +9,7 @@
 ## demo
 
 ```js
-import GroupTag from 'grouptag-react
+import GroupTag from 'grouptag-react'
 const { TagItem } = GroupTag;
 
 <section>
