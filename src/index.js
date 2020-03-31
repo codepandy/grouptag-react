@@ -37,8 +37,16 @@ export default class GroupTag extends PureComponent {
   constructor(props) {
     super(props);
     const { isSingle, value } = props;
+    let initCheckedItem = [];
+    if (Array.isArray(value) && value.length > 0) {
+      if (isSingle) {
+        initCheckedItem = [value[0]];
+      } else {
+        initCheckedItem = [...value];
+      }
+    }
     this.state = {
-      checkedItem: isSingle && value.length > 0 ? [value[0]] : value,
+      checkedItem: initCheckedItem,
     };
   }
 
@@ -51,10 +59,11 @@ export default class GroupTag extends PureComponent {
 
   onClickItem = item => {
     const { onClick, isSingle, idField } = this.props;
-    const { checkedItem } = this.state;
+    let { checkedItem } = this.state;
+    debugger;
     // 单选
     if (isSingle) {
-      checkedItem[0] = item[idField];
+      checkedItem = [item[idField]];
     } else {
       // 多选
       const index = checkedItem.findIndex(ele => ele === item[idField]);
@@ -66,7 +75,9 @@ export default class GroupTag extends PureComponent {
     }
 
     this.setState({ checkedItem: [...checkedItem] });
-    onClick(item);
+    if (typeof onClick === "function") {
+      onClick(item);
+    }
   };
 
   render() {

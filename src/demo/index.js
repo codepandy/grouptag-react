@@ -28,11 +28,11 @@ function Main() {
         isSingle={true}
         onClick={onClickItem}
         source={[
-          { id: "1", name: "电脑" },
-          { id: "2", name: "水杯" },
-          { id: "3", name: "冰箱" },
-          { id: "4", name: "充电器" },
-          { id: "5", name: "其他" },
+          { id: 0, name: "电脑" },
+          { id: 2, name: "水杯" },
+          { id: 3, name: "冰箱" },
+          { id: 4, name: "充电器" },
+          { id: 5, name: "其他" },
         ]}
       />
 
