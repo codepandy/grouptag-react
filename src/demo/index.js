@@ -6,6 +6,7 @@ function Main() {
   return (
     <section>
       <GroupTag
+        value={["1", "2"]}
         source={[
           { id: "1", name: "电脑" },
           { id: "2", name: "水杯" },
