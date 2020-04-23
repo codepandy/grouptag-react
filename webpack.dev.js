@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const baseConfig = require("./webpack.base");
 
 module.exports = merge(baseConfig, {
-  entry: path.join(__dirname, "./src/demo/"),
+  entry: ["@babel/polyfill", path.join(__dirname, "./src/demo/")],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle_demo.js",
@@ -17,6 +17,7 @@ module.exports = merge(baseConfig, {
     }),
   ],
   devServer: {
+    host: "0.0.0.0",
     port: 8012,
     contentBase: path.resolve(__dirname, "dist"),
     compress: true,

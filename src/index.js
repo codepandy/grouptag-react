@@ -6,7 +6,7 @@ import checkImage from "./assets/check@2x.png";
 function TagItem({ value, children, idField, textField, onClick, checked, className, style }) {
   return (
     <div
-      className={`${checked ? styles.checked : styles.item} ${className}`}
+      className={`${checked ? styles.checked : styles.item} ${className ? className : ""}`}
       onClick={onClick.bind(this, { [idField]: value, [textField]: children })}
       style={style}
     >
@@ -60,7 +60,7 @@ export default class GroupTag extends PureComponent {
   onClickItem = item => {
     const { onClick, isSingle, idField } = this.props;
     let { checkedItem } = this.state;
-    debugger;
+
     // 单选
     if (isSingle) {
       checkedItem = [item[idField]];
